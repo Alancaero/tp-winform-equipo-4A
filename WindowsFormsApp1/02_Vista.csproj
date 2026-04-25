@@ -78,6 +78,9 @@
     <EmbeddedResource Include="ArticuloAltaForm.resx">
       <DependentUpon>ArticuloAltaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ArticuloDetalleForm.resx">
+      <DependentUpon>ArticuloDetalleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ArticuloListadoForm.resx">
       <DependentUpon>ArticuloListadoForm.cs</DependentUpon>
     </EmbeddedResource>
