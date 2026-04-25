@@ -15,13 +15,36 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
+
         }
-        
-        private void busquedaDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {            
+            lblMensaje.Dock = DockStyle.Fill;
+        }
+
+        private void ListadoDeArticulosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            lblMensaje.Visible = false;
             Form formListado = new ArticuloListadoForm();
             formListado.MdiParent = this;
+            formListado.Dock = DockStyle.Fill;
             formListado.Show();
+        }
+
+        private void AgregarYModificarArticulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblMensaje.Visible = false;
+            Form formAlta= new ArticuloAltaForm();
+            formAlta.MdiParent = this;
+            formAlta.Dock = DockStyle.Fill;
+            formAlta.Show();
+        }
+
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
