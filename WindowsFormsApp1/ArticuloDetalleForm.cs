@@ -42,10 +42,19 @@ namespace Vista
             txtCategoria.Text = _articulo.Categoria?.Descripcion;
 
             var listaImagenes = ImagenBL.GetImagenesByIdArticulo(_articulo.Id);
-            
-            foreach (Imagen item in listaImagenes)
+
+            if (listaImagenes == null || listaImagenes.Count == 0)
+            {
+                pbxImagen.Image = Properties.Resources._noImagen_Lobo_Idolo;
+                return;
+            }
+            try
             {
                 pbxImagen.Load(listaImagenes[0].ImagenUrl);
+            }
+            catch
+            {
+                pbxImagen.Image = Properties.Resources._noImagen_Lobo_Idolo;
             }
         }
     }

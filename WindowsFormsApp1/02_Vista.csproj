@@ -120,5 +120,11 @@
       <Name>01_Dominio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_noImagen, Lobo marino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_noImagen_Lobo_Idolo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
