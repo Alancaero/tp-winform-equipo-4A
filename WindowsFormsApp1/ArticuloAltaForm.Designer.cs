@@ -30,6 +30,7 @@
         {
             this.grpBoxAltaArticulo = new System.Windows.Forms.GroupBox();
             this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.pctImagen = new System.Windows.Forms.PictureBox();
             this.lblImagen = new System.Windows.Forms.Label();
             this.cboMarca = new System.Windows.Forms.ComboBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -42,11 +43,10 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.pctImagen = new System.Windows.Forms.PictureBox();
             this.pnlInferior = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.grpBoxAltaArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagen)).BeginInit();
             this.pnlInferior.SuspendLayout();
@@ -78,11 +78,20 @@
             // 
             // cboCategoria
             // 
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(123, 153);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(229, 24);
             this.cboCategoria.TabIndex = 16;
+            // 
+            // pctImagen
+            // 
+            this.pctImagen.Location = new System.Drawing.Point(498, 63);
+            this.pctImagen.Name = "pctImagen";
+            this.pctImagen.Size = new System.Drawing.Size(349, 356);
+            this.pctImagen.TabIndex = 3;
+            this.pctImagen.TabStop = false;
             // 
             // lblImagen
             // 
@@ -96,6 +105,7 @@
             // 
             // cboMarca
             // 
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMarca.FormattingEnabled = true;
             this.cboMarca.Location = new System.Drawing.Point(123, 116);
             this.cboMarca.Name = "cboMarca";
@@ -195,14 +205,6 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
-            // pctImagen
-            // 
-            this.pctImagen.Location = new System.Drawing.Point(498, 63);
-            this.pctImagen.Name = "pctImagen";
-            this.pctImagen.Size = new System.Drawing.Size(349, 356);
-            this.pctImagen.TabIndex = 3;
-            this.pctImagen.TabStop = false;
-            // 
             // pnlInferior
             // 
             this.pnlInferior.Controls.Add(this.btnLimpiar);
@@ -213,6 +215,19 @@
             this.pnlInferior.Name = "pnlInferior";
             this.pnlInferior.Size = new System.Drawing.Size(951, 46);
             this.pnlInferior.TabIndex = 15;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiar.AutoSize = true;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(766, 11);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(88, 26);
+            this.btnLimpiar.TabIndex = 2;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar
             // 
@@ -239,19 +254,6 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiar.AutoSize = true;
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(766, 11);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(88, 26);
-            this.btnLimpiar.TabIndex = 2;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // ArticuloAltaForm
             // 

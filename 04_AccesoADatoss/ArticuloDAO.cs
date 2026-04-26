@@ -21,8 +21,8 @@ namespace AccesoADatos
                     "INNER JOIN MARCAS M ON M.Id = A.IdMarca " +
                     "LEFT JOIN CATEGORIAS C ON C.Id = A.IdCategoria " +
                     "LEFT JOIN IMAGENES I ON I.IdArticulo = A.Id " +
-                    "WHERE 1 = 1 " +
-                    "GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Id, M.Descripcion, C.Id, C.Descripcion";
+                    "WHERE 1 = 1 ";
+                    
 
             if (!string.IsNullOrEmpty(codigo))
                 consulta += " AND A.Codigo LIKE '%" + codigo + "%'";
@@ -32,6 +32,8 @@ namespace AccesoADatos
                 consulta += " AND M.Descripcion LIKE '%" + marca + "%'";
             if (!string.IsNullOrEmpty(categoria))
                 consulta += " AND C.Descripcion LIKE '%" + categoria + "%'";
+
+            consulta += "GROUP BY A.Id, A.Codigo, A.Nombre, A.Descripcion, A.Precio, M.Id, M.Descripcion, C.Id, C.Descripcion";
 
             try
             {
