@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.grpBoxDetalleArticulo = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             // 
             // grpBoxDetalleArticulo
             // 
-            this.grpBoxDetalleArticulo.Controls.Add(this.textBox2);
+            this.grpBoxDetalleArticulo.Controls.Add(this.txtDescripcion);
             this.grpBoxDetalleArticulo.Controls.Add(this.lblDescripcion);
             this.grpBoxDetalleArticulo.Controls.Add(this.txtPrecio);
             this.grpBoxDetalleArticulo.Controls.Add(this.lblPrecio);
@@ -73,15 +73,15 @@
             this.grpBoxDetalleArticulo.TabStop = false;
             this.grpBoxDetalleArticulo.Text = "Detalle del articulo";
             // 
-            // textBox2
+            // txtDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 239);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(229, 22);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.TabStop = false;
+            this.txtDescripcion.Location = new System.Drawing.Point(123, 239);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.ReadOnly = true;
+            this.txtDescripcion.Size = new System.Drawing.Size(229, 22);
+            this.txtDescripcion.TabIndex = 14;
+            this.txtDescripcion.TabStop = false;
             // 
             // lblDescripcion
             // 
@@ -265,7 +265,7 @@
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblPrecio;

@@ -68,7 +68,14 @@ namespace Vista
 
         private void btnDetalle_Click(object sender, EventArgs e)
         {
-            Form formDetalle = new ArticuloDetalleForm();
+            if(dgvArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un artículo para ver su detalle.");
+            }
+
+            Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            Form formDetalle = new ArticuloDetalleForm(articulo);
             formDetalle.MdiParent = MdiParent;
             formDetalle.Dock = DockStyle.Fill;
             formDetalle.Show();
