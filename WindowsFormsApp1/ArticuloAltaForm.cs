@@ -14,24 +14,44 @@ namespace Vista
 {
     public partial class ArticuloAltaForm : Form
     {
+        private Articulo _articulo;
+
         public ArticuloAltaForm()
         {
             InitializeComponent();
             fillCombos();
         }
 
+        public ArticuloAltaForm(Articulo articulo)
+        {
+            InitializeComponent();
+            fillCombos();
+            _articulo = articulo;
+            CargarArticulo();
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try {             
-                ArticuloBL.Guardar(txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text, txtPrecio.Text, txtDescripcion.Text);
-                MessageBox.Show("Artículo guardado exitosamente.");
-                Limpiar();
 
+                if(_articulo == null)
+                {
+                    ArticuloBL.Guardar(txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text, txtPrecio.Text, txtDescripcion.Text);
+                    MessageBox.Show("Artículo guardado exitosamente.");
+                    Limpiar();
+                } else
+                {
+                    ArticuloBL.Modificar(_articulo.Id, txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text, txtPrecio.Text, txtDescripcion.Text);
+                    MessageBox.Show("Artículo modificado exitosamente.");
+                    Close();
+                }
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
+
+
         private void fillCombos()
         {
             var listaMarcas = MarcaBL.GetMarcas();
@@ -66,6 +86,20 @@ namespace Vista
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void CargarArticulo()
+        {
+            if (_articulo == null)
+                return;
+
+            txtCodigo.Text = _articulo.Codigo;
+            txtNombre.Text = _articulo.Nombre;
+            txtPrecio.Text = _articulo.Precio.ToString();
+            txtDescripcion.Text = _articulo.Descripcion;
+
+            cboMarca.Text = _articulo.Marca?.Descripcion;
+            cboCategoria.Text = _articulo.Categoria?.Descripcion;
         }
     }
 }

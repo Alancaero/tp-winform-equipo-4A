@@ -101,6 +101,27 @@ namespace AccesoADatos
             }
         }
 
+        public void Modificar(int id, string codigo, string nombre, int marcaId, int categoriaId, decimal precio, string descripcion)
+        {
+            try
+            {
+                _accesoADatos.setearConsulta(
+                    "UPDATE ARTICULOS " +
+                    "SET Codigo = '" + codigo + "', Nombre = '" + nombre + "', Descripcion = '" + descripcion + "', Precio = " + precio + ", IdMarca = " + marcaId + ", IdCategoria = " + categoriaId +
+                    " WHERE Id = " + id
+                );
+                _accesoADatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al modificar el artículo: " + ex.Message);
+            }
+            finally
+            {
+                _accesoADatos.cerrarConexion();
+            }
+        }
+
         public void Eliminar(int id)
         {
             try

@@ -91,6 +91,26 @@ namespace Vista
             {
                 MessageBox.Show(ex.Message);
             }
+
+            MessageBox.Show("Artículo eliminado exitosamente.");
+            // actualiza la grilla
+            btnBuscar_Click(null, null);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
+            if(dgvArticulos.CurrentRow == null)
+            {
+                MessageBox.Show("Debe seleccionar un artículo para modificar.");
+            }
+
+            Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            Form formAlta = new ArticuloAltaForm(articulo);
+            formAlta.MdiParent = MdiParent;
+            formAlta.Dock = DockStyle.Fill;
+            formAlta.Show();
         }
     }
 }
