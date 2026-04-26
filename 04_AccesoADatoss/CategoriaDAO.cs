@@ -32,5 +32,66 @@ namespace AccesoADatos
                 throw;
             } finally { _accesoADatos.cerrarConexion(); }
         }
+        public void Agregar(string descripcion)
+        {
+            AccesoADatosDAO datos = new AccesoADatosDAO();
+
+            try
+            {
+                datos.setearConsulta(
+                    "INSERT INTO Categorias (Descripcion) VALUES ('" + descripcion + "')"
+                );
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al agregar la Categoria: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void Modificar(int id, string descripcion)
+        {
+            AccesoADatosDAO datos = new AccesoADatosDAO();
+
+            try
+            {
+                datos.setearConsulta(
+                    "UPDATE Categorias SET Descripcion = '" + descripcion + "' WHERE Id = " + id
+                );
+
+                datos.ejecutarAccion();
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
+
+        public void Eliminar(int id)
+        {
+            AccesoADatosDAO datos = new AccesoADatosDAO();
+
+            try
+            {
+                datos.setearConsulta(
+                    "DELETE FROM Categorias WHERE Id = " + id
+                );
+
+                datos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al eliminar la Categoria: " + ex.Message);
+            }
+            finally
+            {
+                datos.cerrarConexion();
+            }
+        }
     }
 }

@@ -55,5 +55,14 @@ namespace Vista
             formMarcas.Dock = DockStyle.Fill;
             formMarcas.Show();
         }
+
+        private void listadoDeCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            lblMensaje.Visible = false;
+            Form formCategorias = new CategoriaGestionForm();
+            formCategorias.MdiParent = this;
+            formCategorias.Dock = DockStyle.Fill;
+            formCategorias.Show();
+        }
     }
 }
