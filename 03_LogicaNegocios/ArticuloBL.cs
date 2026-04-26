@@ -14,6 +14,10 @@ namespace LogicaNegocio
 
             var resultado = dao.GetByFilter(codigo, nombre, marca, categoria);
 
+            if (resultado.Count == 0)            
+                throw new Exception("No se encontraron artículos con los filtros ingresados.");
+            
+
             return resultado;
         }
 

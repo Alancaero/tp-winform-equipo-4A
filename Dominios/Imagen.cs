@@ -7,7 +7,7 @@ namespace Dominio
         private string _imagenUrl;
 
         public int Id { get; set; }
-        public Articulo Articulo { get; set; }
+        public int IdArticulo { get; set; }
         public string ImagenUrl
         {
             get => _imagenUrl;

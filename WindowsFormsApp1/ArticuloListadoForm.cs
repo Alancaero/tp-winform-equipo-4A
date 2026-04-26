@@ -39,15 +39,15 @@ namespace Vista
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var articulos = ArticuloBL.GetByFilter(txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text);
-
-            dgvArticulos.DataSource = null;
-            dgvArticulos.DataSource = articulos;
-            // Cambiar aca, esto va en bl, mira si necesitamos endpoints. 
-            if (articulos.Count == 0)
+            try
             {
-                MessageBox.Show("No se encontraron artículos con los filtros ingresados.");
-            }
+                var articulos = ArticuloBL.GetByFilter(txtCodigo.Text, txtNombre.Text, cboMarca.Text, cboCategoria.Text);
+                dgvArticulos.DataSource = null;
+                dgvArticulos.DataSource = articulos;
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);                
+            }                         
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

@@ -41,12 +41,12 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxImagen = new System.Windows.Forms.PictureBox();
             this.lblImagen = new System.Windows.Forms.Label();
             this.pnlInferior = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.grpBoxDetalleArticulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             this.pnlInferior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -188,14 +188,14 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
-            // pictureBox1
+            // pbxImagen
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(452, 60);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(294, 328);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.pbxImagen.Location = new System.Drawing.Point(452, 60);
+            this.pbxImagen.Name = "pbxImagen";
+            this.pbxImagen.Size = new System.Drawing.Size(294, 328);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxImagen.TabIndex = 2;
+            this.pbxImagen.TabStop = false;
             // 
             // lblImagen
             // 
@@ -237,7 +237,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.pnlInferior);
             this.Controls.Add(this.lblImagen);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbxImagen);
             this.Controls.Add(this.grpBoxDetalleArticulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ArticuloDetalleForm";
@@ -245,7 +245,7 @@
             this.Text = "ArticulodetalleForm";
             this.grpBoxDetalleArticulo.ResumeLayout(false);
             this.grpBoxDetalleArticulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             this.pnlInferior.ResumeLayout(false);
             this.pnlInferior.PerformLayout();
             this.ResumeLayout(false);
@@ -264,7 +264,7 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtCategoria;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbxImagen;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtPrecio;
