@@ -41,6 +41,19 @@ namespace AccesoADatos
                 throw ex;
             }
         }
+
+        public void ejecutarAccion()
+        {
+            try
+            {
+                _conexion.Open();
+                _comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void cerrarConexion()
         {
             if (_lector != null)

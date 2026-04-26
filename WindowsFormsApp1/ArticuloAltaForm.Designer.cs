@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.grpBoxAltaArticulo = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.lblImagen = new System.Windows.Forms.Label();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblPrecio = new System.Windows.Forms.Label();
@@ -39,13 +42,11 @@
             this.lblMarca = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.cboMarca = new System.Windows.Forms.ComboBox();
-            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.pctImagen = new System.Windows.Forms.PictureBox();
-            this.lblImagen = new System.Windows.Forms.Label();
             this.pnlInferior = new System.Windows.Forms.Panel();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.grpBoxAltaArticulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctImagen)).BeginInit();
             this.pnlInferior.SuspendLayout();
@@ -54,9 +55,10 @@
             // grpBoxAltaArticulo
             // 
             this.grpBoxAltaArticulo.Controls.Add(this.cboCategoria);
+            this.grpBoxAltaArticulo.Controls.Add(this.pctImagen);
             this.grpBoxAltaArticulo.Controls.Add(this.lblImagen);
             this.grpBoxAltaArticulo.Controls.Add(this.cboMarca);
-            this.grpBoxAltaArticulo.Controls.Add(this.textBox2);
+            this.grpBoxAltaArticulo.Controls.Add(this.txtDescripcion);
             this.grpBoxAltaArticulo.Controls.Add(this.lblDescripcion);
             this.grpBoxAltaArticulo.Controls.Add(this.txtPrecio);
             this.grpBoxAltaArticulo.Controls.Add(this.lblPrecio);
@@ -74,15 +76,40 @@
             this.grpBoxAltaArticulo.TabIndex = 2;
             this.grpBoxAltaArticulo.TabStop = false;
             // 
-            // textBox2
+            // cboCategoria
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 239);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(229, 22);
-            this.textBox2.TabIndex = 14;
-            this.textBox2.TabStop = false;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(123, 153);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(229, 24);
+            this.cboCategoria.TabIndex = 16;
+            // 
+            // lblImagen
+            // 
+            this.lblImagen.AutoSize = true;
+            this.lblImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImagen.Location = new System.Drawing.Point(605, 18);
+            this.lblImagen.Name = "lblImagen";
+            this.lblImagen.Size = new System.Drawing.Size(55, 16);
+            this.lblImagen.TabIndex = 14;
+            this.lblImagen.Text = "Imagen:";
+            // 
+            // cboMarca
+            // 
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(123, 116);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(229, 24);
+            this.cboMarca.TabIndex = 15;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(123, 239);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(229, 22);
+            this.txtDescripcion.TabIndex = 14;
+            this.txtDescripcion.TabStop = false;
             // 
             // lblDescripcion
             // 
@@ -98,7 +125,6 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(123, 193);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.ReadOnly = true;
             this.txtPrecio.Size = new System.Drawing.Size(229, 22);
             this.txtPrecio.TabIndex = 12;
             this.txtPrecio.TabStop = false;
@@ -117,7 +143,6 @@
             // 
             this.txtCodigo.Location = new System.Drawing.Point(123, 37);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
             this.txtCodigo.Size = new System.Drawing.Size(229, 22);
             this.txtCodigo.TabIndex = 8;
             this.txtCodigo.TabStop = false;
@@ -126,7 +151,6 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(123, 74);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(229, 22);
             this.txtNombre.TabIndex = 5;
             this.txtNombre.TabStop = false;
@@ -171,42 +195,17 @@
             this.lblCodigo.TabIndex = 0;
             this.lblCodigo.Text = "Código:";
             // 
-            // cboMarca
-            // 
-            this.cboMarca.FormattingEnabled = true;
-            this.cboMarca.Location = new System.Drawing.Point(123, 116);
-            this.cboMarca.Name = "cboMarca";
-            this.cboMarca.Size = new System.Drawing.Size(229, 24);
-            this.cboMarca.TabIndex = 15;
-            // 
-            // cboCategoria
-            // 
-            this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(123, 153);
-            this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(229, 24);
-            this.cboCategoria.TabIndex = 16;
-            // 
             // pctImagen
             // 
-            this.pctImagen.Location = new System.Drawing.Point(460, 56);
+            this.pctImagen.Location = new System.Drawing.Point(498, 63);
             this.pctImagen.Name = "pctImagen";
             this.pctImagen.Size = new System.Drawing.Size(349, 356);
             this.pctImagen.TabIndex = 3;
             this.pctImagen.TabStop = false;
             // 
-            // lblImagen
-            // 
-            this.lblImagen.AutoSize = true;
-            this.lblImagen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImagen.Location = new System.Drawing.Point(605, 18);
-            this.lblImagen.Name = "lblImagen";
-            this.lblImagen.Size = new System.Drawing.Size(55, 16);
-            this.lblImagen.TabIndex = 14;
-            this.lblImagen.Text = "Imagen:";
-            // 
             // pnlInferior
             // 
+            this.pnlInferior.Controls.Add(this.btnLimpiar);
             this.pnlInferior.Controls.Add(this.btnGuardar);
             this.pnlInferior.Controls.Add(this.btnCancelar);
             this.pnlInferior.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -220,12 +219,13 @@
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardar.AutoSize = true;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(770, 11);
+            this.btnGuardar.Location = new System.Drawing.Point(672, 11);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(88, 26);
             this.btnGuardar.TabIndex = 1;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -239,13 +239,25 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiar.AutoSize = true;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(766, 11);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(88, 26);
+            this.btnLimpiar.TabIndex = 2;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // ArticuloAltaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(951, 518);
             this.Controls.Add(this.pnlInferior);
-            this.Controls.Add(this.pctImagen);
             this.Controls.Add(this.grpBoxAltaArticulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ArticuloAltaForm";
@@ -264,7 +276,7 @@
         private System.Windows.Forms.GroupBox grpBoxAltaArticulo;
         private System.Windows.Forms.ComboBox cboCategoria;
         private System.Windows.Forms.ComboBox cboMarca;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblPrecio;
@@ -279,5 +291,6 @@
         private System.Windows.Forms.Panel pnlInferior;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

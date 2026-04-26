@@ -32,8 +32,9 @@ namespace AccesoADatos
                 consulta += " AND M.Descripcion LIKE '%" + marca + "%'";
             if (!string.IsNullOrEmpty(categoria))
                 consulta += " AND C.Descripcion LIKE '%" + categoria + "%'";
-           
-            try {
+
+            try
+            {
                 _accesoADatos.setearConsulta(consulta);
                 _accesoADatos.ejecutarLectura();
 
@@ -69,10 +70,35 @@ namespace AccesoADatos
                         };
                     }
                     lista.Add(articulo);
-                }return lista;
-                }catch (Exception){
-                    throw; 
-                }finally {_accesoADatos.cerrarConexion(); }
+                }
+                return lista;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally { _accesoADatos.cerrarConexion(); }
+        }
+
+        public void Guardar(string codigo, string nombre, int marcaId, int categoriaId, decimal precio, string descripcion)
+        {
+            try
+            {
+
+                _accesoADatos.setearConsulta(
+                    "INSERT INTO ARTICULOS (Codigo, Nombre, Descripcion, Precio, IdMarca, IdCategoria) " +
+                    "VALUES ('" + codigo + "', '" + nombre + "', '" + descripcion + "', " + precio + ", " + marcaId + ", " + categoriaId + ")"
+                );
+                _accesoADatos.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al guardar el artículo: " + ex.Message);
+            }
+            finally
+            {
+                _accesoADatos.cerrarConexion();
+            }
         }
     }
 }

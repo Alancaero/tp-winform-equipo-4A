@@ -11,5 +11,8 @@ namespace LogicaNegocio
             CategoriaDAO dao = new CategoriaDAO();            
             return dao.GetCategorias();
         }
+
+
+
     }
 }
