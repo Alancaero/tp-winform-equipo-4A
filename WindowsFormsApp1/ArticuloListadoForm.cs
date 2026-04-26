@@ -57,5 +57,13 @@ namespace Vista
             cboMarca.SelectedIndex = -1;
             cboCategoria.SelectedIndex = -1;
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Form formAlta = new ArticuloAltaForm();
+            formAlta.MdiParent = MdiParent;
+            formAlta.Dock = DockStyle.Fill;
+            formAlta.Show();
+        }
     }
 }
