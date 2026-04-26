@@ -47,5 +47,15 @@
     <Compile Include="MarcaBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\04_AccesoADatoss\04_AccesoADatos.csproj">
+      <Project>{68F4326B-94A8-4E22-BAD8-C00441E9E875}</Project>
+      <Name>04_AccesoADatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dominios\01_Dominio.csproj">
+      <Project>{A93F6170-A765-4DC4-95F8-8263C004FDB6}</Project>
+      <Name>01_Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

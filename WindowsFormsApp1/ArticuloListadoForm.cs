@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 using LogicaNegocio;
 
 namespace Vista
@@ -21,7 +22,14 @@ namespace Vista
 
         private void fillCombos()
         {
-            cboMarca = MarcaBL.GetAll();
+
+
+            var listaMarcas = MarcaBL.GetMarcas();
+
+            foreach (Marca marca in listaMarcas)
+            {
+                cboMarca.Items.Add(marca.Descripcion);
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
