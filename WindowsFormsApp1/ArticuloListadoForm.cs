@@ -86,22 +86,32 @@ namespace Vista
             if (dgvArticulos.CurrentRow == null)
             {
                 MessageBox.Show("Debe seleccionar un artículo para eliminar.");
+                return;
             }
 
             Articulo articulo = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            
+            DialogResult advertencia = MessageBox.Show(
+            "¿Estás seguro de que deseas eliminar este artículo?",
+            "Confirmar eliminación",
+            MessageBoxButtons.YesNo,
+            MessageBoxIcon.Warning);
 
-            try
+            if (advertencia == DialogResult.Yes)
             {
-                ArticuloBL.Eliminar(articulo.Id);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                try
+                {
+                    ArticuloBL.Eliminar(articulo.Id);
+                    MessageBox.Show("Artículo eliminado exitosamente.");
 
-            MessageBox.Show("Artículo eliminado exitosamente.");
-            // actualiza la grilla
-            btnBuscar_Click(null, null);
+                    // actualiza la grilla
+                    btnBuscar_Click(null, null);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
