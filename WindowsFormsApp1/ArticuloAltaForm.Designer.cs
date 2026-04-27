@@ -94,6 +94,7 @@
             this.pbxImagen.Location = new System.Drawing.Point(505, 55);
             this.pbxImagen.Name = "pbxImagen";
             this.pbxImagen.Size = new System.Drawing.Size(374, 356);
+            this.pbxImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxImagen.TabIndex = 3;
             this.pbxImagen.TabStop = false;
             // 
@@ -265,6 +266,8 @@
             this.txtUrlImagen.Name = "txtUrlImagen";
             this.txtUrlImagen.Size = new System.Drawing.Size(219, 22);
             this.txtUrlImagen.TabIndex = 17;
+            this.txtUrlImagen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUrlImagen_KeyDown);
+            this.txtUrlImagen.Leave += new System.EventHandler(this.txtUrlImagen_Leave);
             // 
             // btnBuscarImagen
             // 
@@ -274,6 +277,7 @@
             this.btnBuscarImagen.TabIndex = 18;
             this.btnBuscarImagen.Text = "Seleccionar imagen guardada";
             this.btnBuscarImagen.UseVisualStyleBackColor = true;
+            this.btnBuscarImagen.Click += new System.EventHandler(this.btnBuscarImagen_Click);
             // 
             // ArticuloAltaForm
             // 

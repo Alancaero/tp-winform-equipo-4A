@@ -50,6 +50,7 @@ namespace Vista
             {
                 MessageBox.Show(ex.Message);
             }
+            Limpiar();
         }
 
 
@@ -139,6 +140,15 @@ namespace Vista
 
             cboMarca.Text = _articulo.Marca?.Descripcion;
             cboCategoria.Text = _articulo.Categoria?.Descripcion;
+        }
+
+        private void txtUrlImagen_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                rutaImagen = txtUrlImagen.Text;
+                cargarImagen(rutaImagen);
+            }
         }
     }
 }
